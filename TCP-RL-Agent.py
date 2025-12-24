@@ -28,8 +28,8 @@ parser.add_argument('--iterations',
 					help='Number of iterations, Default: 1')
 parser.add_argument('--steps',
 					type=int,
-					default=100,
-					help='Number of steps, Default 100')
+					default=300,
+					help='Number of steps, Default 300')
 args = parser.parse_args()
 
 startSim = bool(args.start)
@@ -255,7 +255,7 @@ for iteration in range(iterationNum):
 
 mpl.rcdefaults()
 mpl.rcParams.update({'font.size': 16})
-fig, ax = plt.subplots(2, 2, figsize=(4,2))
+fig, ax = plt.subplots(2, 2, figsize=(16,8))
 plt.tight_layout(pad=0.3)
 
 ax[0, 0].plot(range(len(cWnd_history)), cWnd_history, marker="", linestyle="-")

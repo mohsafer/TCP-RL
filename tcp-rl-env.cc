@@ -561,7 +561,7 @@ TcpTimeStepGymEnv::GetObservation()
   // TODO: this is not the right way of doing this.
   // place this somewhere else. see TcpEventGymEnv, how they've done it.
 
-  if (m_new_cWnd > m_old_cWnd && m_totalAvgRttSum > 0 && avgRtt > 0)  {
+  if (m_new_cWnd > m_old_cWnd && m_totalAvgRttSum > Seconds(0) && avgRtt > Seconds(0))  {
     // when agent increases cWnd
     if ((m_totalAvgRttSum / m_totalAvgRttNum) >= avgRtt)  {
       // give reward for decreasing avgRtt
